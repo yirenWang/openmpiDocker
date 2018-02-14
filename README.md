@@ -18,12 +18,17 @@ Then go in the shared folder:
 
 ## MPI 
 
+If you do not choose the name of your output file, it will be by default a.out 
 ```mpic++ <name of your cpp file>```
 
-```mpirun --allow-run-as-root ./a.out``` (because you are root on docker) TODO : create user and give correct permissions etc (Flemme)
+To choose your output file : (`-o` allows you to specifiy your output file )
+```mpic++ -o <name of output file> <name of your cpp file> ```
+
+```mpirun --allow-run-as-root ./a.out``` or ```mpirun --allow-run-as-root <name of output file>```
+(because you are root on docker) TODO : create user and give correct permissions etc.
 
 To run with multiple threads :
-``` mpirun --allow-run-as-root -n 4 ./a.out```
+``` mpirun --allow-run-as-root -n 4 ./a.out``` or ```mpirun --allow-run-as-root <name of output file>```
 
 ## OpenMP
 
